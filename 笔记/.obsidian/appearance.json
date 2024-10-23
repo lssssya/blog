@@ -2,5 +2,6 @@
   "theme": "obsidian",
   "accentColor": "#46a6ff",
   "interfaceFontFamily": "Monaco,Consolas",
-  "monospaceFontFamily": "Consolas"
+  "monospaceFontFamily": "Consolas",
+  "textFontFamily": "Monaco,Consolas"
 }

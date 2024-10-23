@@ -4,39 +4,24 @@
     "type": "split",
     "children": [
       {
-        "id": "8ca231744c7bb645",
+        "id": "e329de3187f6b856",
         "type": "tabs",
         "children": [
           {
-            "id": "29701ba22171ae50",
+            "id": "2f0508939df62467",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "02 前端面试笔记/JS 基础部分/原型链-工厂函数和new.md",
+                "file": "02 前端面试笔记/JS 基础部分/cookie、localStorage、sessionStorage.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "原型链-工厂函数和new"
-            }
-          },
-          {
-            "id": "cc933466eb64402c",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "02 前端面试笔记/JS 基础部分/执行上下文和执行栈.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "执行上下文和执行栈"
+              "title": "cookie、localStorage、sessionStorage"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -108,17 +93,17 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "02 前端面试笔记/JS 基础部分/执行上下文和执行栈.md",
+                "file": "02 前端面试笔记/JS 基础部分/cookie、localStorage、sessionStorage.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
                 "showSearch": false,
                 "searchQuery": "",
                 "backlinkCollapsed": false,
-                "unlinkedCollapsed": true
+                "unlinkedCollapsed": false
               },
               "icon": "links-coming-in",
-              "title": "执行上下文和执行栈 的反向链接列表"
+              "title": "cookie、localStorage、sessionStorage 的反向链接列表"
             }
           },
           {
@@ -161,7 +146,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200
+    "width": 300
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -173,30 +158,45 @@
       "command-palette:打开命令面板": false
     }
   },
-  "active": "cc933466eb64402c",
+  "active": "2f0508939df62467",
   "lastOpenFiles": [
-    "02 前端面试笔记/JS 基础部分/数据类型.md",
-    "02 前端面试笔记/JS 基础部分/原型链-ES6.md",
-    "02 前端面试笔记/JS 基础部分/原型链-工厂函数和new.md",
-    "02 前端面试笔记/JS 基础部分/原型链-prototype.md",
-    "02 前端面试笔记/JS 代码实现部分/手写深拷贝.md",
     "02 前端面试笔记/HTML CSS 部分/HTML.md",
+    "02 前端面试笔记/JS 基础部分/原生API.md",
     "02 前端面试笔记/HTML CSS 部分/CSS.md",
+    "02 前端面试笔记/JS 基础部分/数据类型.md",
+    "02 前端面试笔记/JS 基础部分/微任务、宏任务.md",
+    "02 前端面试笔记/JS 基础部分/性能优化.md",
+    "02 前端面试笔记/JS 基础部分/原型链-工厂函数和new.md",
+    "02 前端面试笔记/JS 基础部分/cookie、localStorage、sessionStorage.md",
+    "02 前端面试笔记/Vue/vite.md",
+    "02 前端面试笔记/网络部分/http.md",
+    "02 前端面试笔记/JS 基础部分/原型链-prototype.md",
+    "02 前端面试笔记/JS 代码实现部分/手写 Promise.md",
+    "02 前端面试笔记/待施工/tcp.md",
+    "02 前端面试笔记/待施工/网络安全.md",
+    "02 前端面试笔记/待施工/模块化.md",
     "02 前端面试笔记/JS 基础部分/执行上下文和执行栈.md",
+    "02 前端面试笔记/JS 基础部分/call、apply、bind.md",
+    "02 前端面试笔记/JS 基础部分/Promise.md",
+    "02 前端面试笔记/JS 基础部分/浏览器的垃圾回收机制.md",
+    "02 前端面试笔记/JS 基础部分/闭包.md",
+    "02 前端面试笔记/JS 代码实现部分/手写节流、防抖.md",
+    "02 前端面试笔记/JS 代码实现部分/手写深拷贝.md",
+    "02 前端面试笔记/网络部分/http 缓存.md",
+    "02 前端面试笔记/待施工",
+    "02 前端面试笔记/Git",
+    "02 前端面试笔记/Webpack",
+    "02 前端面试笔记/Vue",
+    "01 工作代码/占位符.md",
+    "02 前端面试笔记/网络部分",
     "02 前端面试笔记/JS 基础部分/New 的过程.md",
+    "02 前端面试笔记/JS 基础部分/原型链-ES6.md",
     "02 前端面试笔记/JS 代码实现部分",
-    "02 前端面试笔记/HTML CSS 部分/SEO.md",
     "Attachments/Pasted image 20241022145449.png",
     "Attachments/Pasted image 20241022143359.png",
     "Attachments",
     "02 前端面试笔记/HTML CSS 部分",
-    "00 模板/知识内容.md",
     "00 模板",
-    "01 工作代码/占位符.md",
-    "创建链接.md",
-    "02 前端面试笔记/JS 基础部分",
-    "欢迎.md",
-    "01 工作代码",
-    "02 前端面试笔记"
+    "02 前端面试笔记/JS 基础部分"
   ]
 }

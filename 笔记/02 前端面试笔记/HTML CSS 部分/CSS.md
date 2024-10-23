@@ -37,6 +37,8 @@ ie盒模型 border-box：宽高由content+padding+border
 - 批量操作dom，
 - 使用absolute或者fixed脱离文档流
 - gpu加速，比如translate会比absolute改变left高效
+- 其实浏览器自己会攒到一定数量之后执行一批操作
+- 读写分离，有时候批量写入是可以攒一起的，但是你这时候console一下要读取数据，那么就会执行一次reflow
 
 ##### 对 BFC 的理解
 

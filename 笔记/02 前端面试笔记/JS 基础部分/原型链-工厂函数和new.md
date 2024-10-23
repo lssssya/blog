@@ -1,13 +1,13 @@
 
 ```js
 function User(a, b){
-  let user = {}
-  user.name = a
-  user.age = b
-  user.grow = function(year){
-    this.age += year
-  }
-  return user
+	let user = {}
+	user.name = a
+	user.age = b
+	user.grow = function(year){
+	    this.age += year
+	}
+	return user
 }
 ```
 
@@ -15,18 +15,18 @@ function User(a, b){
 
 ```js
 const methods = {
-  grow(year){
-    this.age += year
-  }
+	grow(year){
+		this.age += year
+	}
   // and other function 
 } 
 
 function User(a, b){
-  let user = Object.create(methods)
-  user.name = a
-  user.age = b
+	let user = Object.create(methods)
+	user.name = a
+	user.age = b
   
-  return user
+	return user
 }
 ```
 
@@ -37,15 +37,15 @@ function User(a, b){
 ```js
 function User(a, b){
   // 方法就用 User自带的 prototype
-  let user = Object.create(User.prototype)
-  user.name = a
-  user.age = b
+	let user = Object.create(User.prototype)
+	user.name = a
+	user.age = b
   
-  return user
+	return user
 }
 // 往自己原型链上增加公用方法
 User.prototype.grow = function (year) {
-  this.age += year
+	this.age += year
 }
 // and other function 
 const lsy = User('lsy', 18)
@@ -55,17 +55,16 @@ const lsy = User('lsy', 18)
 
 ```js
 function User(a, b){
-  // 由于最后是使用 new ，所以创建 user 的过程会放在new 上
-  // 这里只需要定义好原型和方法即可
+	// 由于最后是使用 new ，所以创建 user 的过程会放在new 上
+	// 这里只需要定义好原型和方法即可
   
-  // let user = Object.create(User.prototype)
-  user.name = a
-  user.age = b
-  
-  // return user
+	// let user = Object.create(User.prototype)
+	user.name = a
+	user.age = b
+	// return user
 }
 User.prototype.grow = function (year) {
-  this.age += year
+	this.age += year
 }
 
 const lsy = new User('lsy', 18)
@@ -78,5 +77,5 @@ const lsy = new User('lsy', 18)
 	- 可以用 `let user = Object.create(A.prototype)` 实现
 	- 将 user 对象的原型指定为 User ，也就是 `user.__proto__ === User.prototype`
 	- 由于 user 的构造函数就是 User ，也有 `user.__proto__ === User.constructoer.prototype`
-1. 用this执行构造函数（生成的新对象会绑定到函数调用的this）
-2. 返回 user 对象
+3. 用this执行构造函数（生成的新对象会绑定到函数调用的this）
+4. 返回 user 对象

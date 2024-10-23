@@ -19,7 +19,7 @@ let a = new A()
 
 ```js
 function B(){
-  this.func = function(){ console.log('b') }
+	this.func = function(){ console.log('b') }
 }
 
 let b = new B()
