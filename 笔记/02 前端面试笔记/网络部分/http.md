@@ -115,7 +115,6 @@ data2
 而且，在实际的场景中，对于图片等文件的上传，基本采用`multipart/form-data`而不用`application/x-www-form-urlencoded`，因为没有必要做 URL 编码，带来巨大耗时的同时也占用了更多的空间。
 
 
-##### 对 Cookie 了解多少
 
 ##### http 代理
 
