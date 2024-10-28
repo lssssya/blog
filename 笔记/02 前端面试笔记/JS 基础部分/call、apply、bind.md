@@ -39,9 +39,9 @@ Function.prototype._call(context){
     context[fn] = this
 
 	const args = [...arguments].slice(1), // 除了第一个参数
-	result = context.fn(...args) // 在context上执行一次 fn，然后在 context 上把 fn 删了
+	result = context[fn](...args) // 在context上执行一次 fn，然后在 context 上把 fn 删了
 	
-	delete context.fn
+	delete context[fn]
 	return result
 }
 ```
@@ -61,7 +61,11 @@ Function.prototype._apply = function (context, arr) {
     const fn = Symbol('fn') // 万一上下文本身有一个名字叫 fn 的怎么办？ 用 symbol 
     context[fn] = this
 
-    result = context.fn(!arr ? [] : ...arr);
+	if(arr){  
+		result = context[fn](...arr)  
+	} else{  
+		result = context[fn]()  
+	}
 
   
     delete context.fn
