@@ -34,12 +34,14 @@ Function.prototype._call(context){
 	// 基础判断略
 
 	let result = null 
-	const args = [...arguments].slice(1),
 	context = context || window
-	context.fn = this
-	result = context.fn(...args)
-	delete context.fn
+	const fn = Symbol('fn') // 万一上下文本身有一个名字叫 fn 的怎么办？ 用 symbol 
+    context[fn] = this
 
+	const args = [...arguments].slice(1), // 除了第一个参数
+	result = context.fn(...args) // 在context上执行一次 fn，然后在 context 上把 fn 删了
+	
+	delete context.fn
 	return result
 }
 ```
@@ -51,6 +53,21 @@ Function.prototype._call(context){
 
 其余一样
 
+```js
+Function.prototype._apply = function (context, arr) {
+
+    let result = null
+    context = context || window;
+    const fn = Symbol('fn') // 万一上下文本身有一个名字叫 fn 的怎么办？ 用 symbol 
+    context[fn] = this
+
+    result = context.fn(!arr ? [] : ...arr);
+
+  
+    delete context.fn
+    return result;
+}
+```
 
 ##### bind
 
@@ -66,3 +83,20 @@ Function.prototype._call(context){
 - **回调函数**：在事件处理程序或其他异步代码中确保正确的 `this` 上下文。
 - **函数适配器**：预设一些参数，使得原始函数可以在不同上下文中重用。
 - **继承**：在构造函数或原型链中重用父类的方法，同时保持正确的 `this` 指向。
+
+
+```js
+
+// bind 返回一个函数，其this指向传入的参数
+
+Function.prototype.bind2 = function (context) {
+
+  var fn = this
+  var args = Array.prototype.slice.call(arguments, 1); // 类数组转真正数组
+  // 支持 es6可以 直接  [...arguments].slice(1)
+
+  return function () {
+    return fn.apply(context, args.concat(Array.prototype.slice.call(arguments)) )
+  }
+}
+```

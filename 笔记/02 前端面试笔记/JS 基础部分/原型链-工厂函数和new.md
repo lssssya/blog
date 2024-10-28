@@ -79,3 +79,28 @@ const lsy = new User('lsy', 18)
 	- 由于 user 的构造函数就是 User ，也有 `user.__proto__ === User.constructoer.prototype`
 3. 用this执行构造函数（生成的新对象会绑定到函数调用的this）
 4. 返回 user 对象
+
+```js
+// 实现一个 new
+
+function _new(constructor,...arg){
+
+  let obj = Object.create(constructor.prototype)
+
+  let res = constructor.apply(obj,arg) // 执行一下构造函数
+
+
+  const isObject = typeof res === 'object' && obj !== null
+
+  const isFunction = typeof res === 'function'
+
+
+  // 如果构造函数没有返回值，或者返回非对象类型，new 最后的结果都是 obj 也就是实例，
+
+  // 如果构造函数有返回值，且是个对象类型，new 最后的结果会返回这个对象
+
+  return isObject || isFunction ? res : obj
+
+}
+
+```
