@@ -61,9 +61,9 @@ Function.prototype._apply = function (context, arr) {
     const fn = Symbol('fn') // 万一上下文本身有一个名字叫 fn 的怎么办？ 用 symbol 
     context[fn] = this
 
-	if(arr){  
+	if (arr) {  
 		result = context[fn](...arr)  
-	} else{  
+	} else {  
 		result = context[fn]()  
 	}
 
