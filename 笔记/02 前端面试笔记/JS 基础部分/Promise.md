@@ -9,3 +9,5 @@
 
 
 重点在于手写 Promise/A+
+
+![[手写 Promise]]
