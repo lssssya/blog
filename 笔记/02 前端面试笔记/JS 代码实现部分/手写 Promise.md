@@ -228,6 +228,34 @@ class MyPromise {
 
   }
 
+	all(promises) {
+		return new MyPromise((resolve, reject) => {
+			let results = [];
+			let pending = promises.length;
+	
+			if (promises.length === 0) {
+				resolve(results);
+				return;
+			}
+	
+			promises.forEach((promise, index) => {
+			    // 以防不是个promise没有then方法
+				Promise.resolve(promise).then(
+					(res) => {
+						results[index] = res;
+						pending--;
+						if (pending === 0) {
+							resolve(results);
+						}
+					},
+					(reason) => {
+						reject(reason);
+					}
+				);
+			});
+		});
+	}
+
 }
 
   

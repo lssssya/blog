@@ -62,3 +62,15 @@ Proxy和Object.defineProperty都可以用来实现JavaScript对象的响应式�
 - 使用 `defineProps` 接收父组件传递的值。
 - `useAttrs` 获取属性，`useSlots` 获取插槽，`defineEmits` 获取自定义事件。
 - 默认`不会对外暴露`任何属性，如果有需要可使用 `defineExpose` 。
+
+
+
+##### 一些新的api
+
+有些 3.4 3.5 才支持
+
+- defineModel
+- useTemplateRef
+- watchEffect
+- useAttrs
+- defineSlots
