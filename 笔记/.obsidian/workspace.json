@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "02 前端面试笔记/Vue/diff.md",
+                "file": "02 前端面试笔记/待施工/自我介绍.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "diff"
+              "title": "自我介绍"
             }
           }
         ]
@@ -93,7 +93,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "02 前端面试笔记/Vue/diff.md",
+                "file": "02 前端面试笔记/待施工/自我介绍.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -103,7 +103,7 @@
                 "unlinkedCollapsed": false
               },
               "icon": "links-coming-in",
-              "title": "diff 的反向链接列表"
+              "title": "自我介绍 的反向链接列表"
             }
           },
           {
@@ -160,11 +160,16 @@
   },
   "active": "db8d0379231e137b",
   "lastOpenFiles": [
+    "02 前端面试笔记/网络部分/http 缓存.md",
+    "02 前端面试笔记/待施工/自我介绍.md",
+    "02 前端面试笔记/网络部分/http1 http2 http3.md",
+    "02 前端面试笔记/网络部分/https.md",
+    "02 前端面试笔记/网络部分/tcp.md",
+    "02 前端面试笔记/待施工/各类排序算法.md",
+    "02 前端面试笔记/待施工/00 计划.md",
+    "02 前端面试笔记/Vue/diff.md",
     "02 前端面试笔记/JS 基础部分/WeekMap.md",
     "02 前端面试笔记/Vue/vue3.md",
-    "02 前端面试笔记/Vue/diff.md",
-    "02 前端面试笔记/待施工/00 计划.md",
-    "02 前端面试笔记/待施工/各类排序算法.md",
     "02 前端面试笔记/Vue/双向绑定.md",
     "02 前端面试笔记/Vue/vue整体.md",
     "02 前端面试笔记/Webpack/基础.md",
@@ -173,20 +178,15 @@
     "02 前端面试笔记/Vue/vite 和 webpack.md",
     "02 前端面试笔记/Vue/vite.md",
     "02 前端面试笔记/JS 代码实现部分/手写深拷贝.md",
-    "02 前端面试笔记/网络部分/http1 http2 http3.md",
     "02 前端面试笔记/网络部分/http.md",
-    "02 前端面试笔记/网络部分/http 缓存.md",
-    "02 前端面试笔记/网络部分/https.md",
     "02 前端面试笔记/网络部分/网络安全.md",
     "公钥 私钥.md",
     "02 前端面试笔记/网络部分/公钥 私钥.md",
     "02 前端面试笔记/网络部分/数据链路层.md",
-    "02 前端面试笔记/网络部分/tcp.md",
     "Attachments/Pasted image 20241028173320.png",
     "02 前端面试笔记/JS 代码实现部分/手写节流、防抖.md",
     "02 前端面试笔记/JS 基础部分/原型链-工厂函数和new.md",
     "02 前端面试笔记/JS 基础部分/原型链-prototype.md",
-    "02 前端面试笔记/JS 基础部分/原型链-ES6.md",
     "02 前端面试笔记/待施工",
     "02 前端面试笔记/Git",
     "02 前端面试笔记/Webpack",
