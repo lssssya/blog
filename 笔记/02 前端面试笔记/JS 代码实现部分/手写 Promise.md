@@ -254,7 +254,39 @@ class MyPromise {
 				);
 			});
 		});
-	}
+	},
+	
+	race(promises) {
+	    return new MyPromise((resolve, reject) => {
+	        if (!Array.isArray(promises)) {
+	            throw new TypeError('Argument is not iterable');
+	        }
+	        
+	        let resolved = false;
+	        
+	        for (let i = 0; i < promises.length; i++) {
+	            MyPromise.resolve(promises[i]).then(
+	                value => {
+	                    if (!resolved) {
+	                        resolved = true;
+	                        resolve(value);
+	                    }
+	                },
+	                reason => {
+	                    if (!resolved) {
+	                        resolved = true;
+	                        reject(reason);
+	                    }
+	                }
+	            );
+	        }
+	        
+	        if (promises.length === 0) {
+	            resolve(); // 如果传入的是空数组，则直接解析
+	        }
+	    });
+}
+
 
 }
 
