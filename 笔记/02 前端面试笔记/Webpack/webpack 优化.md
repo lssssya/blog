@@ -1,5 +1,5 @@
 
-##### 缩小文件搜索范围
+### 缩小文件搜索范围
 
 - 优化loader，用 include 和 exclude
 
@@ -9,7 +9,7 @@
 
 - resolve.alias：也是告诉提前告诉webpack路径 
 
-##### 减少打包文件
+### 减少打包文件
 
 webpack 会打包第三方模块，增加打包尺寸
 
@@ -44,13 +44,13 @@ Webpack4引入了`SplitChunksPlugin`插件进行公共模块的抽取；由于we
 如果是`require`，在运行时确定模块，那么将无法去分析模块是否可用，只有在编译时分析，才不会影响运行时的状态。
 
 
-##### 缓存
+### 缓存
 
 - cache-loader：将比较大的loader产生的结果缓存到磁盘，作用一般体现在第二轮
 - HardSourceWebpackPlugin
 
 
-##### 其他
+### 其他
 
 - 生产环境关闭 `productionSourceMap`、`css sourceMap`
 - webpack-bundle-analyzer （插件）分析大文件

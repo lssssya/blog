@@ -1,4 +1,4 @@
-##### ES6 的 class
+### ES6 的 class
 
 对于 es6 来说，有 class 的语法糖，将工厂函数改写为 class
 
@@ -19,7 +19,7 @@ class 做的事情
 2. 把 class 的 constructor 里面的代码放到了 User 里面
 3. 然后把 class 的方法放在了 `User.prototype` 里面
 
-##### ES6 的 extends
+### ES6 的 extends
 
 对于继承的写法
 

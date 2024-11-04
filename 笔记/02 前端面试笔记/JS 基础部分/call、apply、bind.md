@@ -1,5 +1,5 @@
 
-##### call
+### call
 
 call() 方法在使用一个指定的 this 值和若干个指定的参数值的前提下调用某个函数或方法。
 
@@ -46,7 +46,7 @@ Function.prototype._call(context){
 }
 ```
 
-##### apply
+### apply
 
 - `call` 接受一个 `this` 值后跟着零个或多个参数。
 - `apply` 接受一个 `this` 值后跟一个包含所有参数的数组。
@@ -73,7 +73,7 @@ Function.prototype._apply = function (context, arr) {
 }
 ```
 
-##### bind
+### bind
 
 `bind` 方法用于创建一个新的函数，这个新函数的 `this` 值会被永久性地绑定到 `bind` 方法的第一个参数指定的对象上。
 

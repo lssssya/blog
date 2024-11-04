@@ -1,13 +1,13 @@
 
 
-##### 明确的行为定义
+### 明确的行为定义
 
 - **状态**：`Promise/A+` 明确规定了三种状态：`pending`（挂起）、`fulfilled`（已解决）和 `rejected`（已拒绝）。一旦 `Promise` 被解决或拒绝，它的状态就不会再改变。
 - **异步性**：规范要求所有 `Promise` 的解决或拒绝操作必须异步发生，也就是说，它们应该在一个未来的任务（通常是微任务）中执行。
 - **链式调用**：规范定义了 `then` 方法的行为，并确保可以进行链式调用。每个 `then` 方法都会返回一个新的 `Promise`，这样可以方便地组合多个操作。
 - **错误处理**：规范还定义了如何处理错误，例如，如果 `Promise` 的解决或拒绝操作抛出了异常，那么 `Promise` 应该被拒绝，并且将这个异常作为拒绝的原因。
 
-##### 其他特性
+### 其他特性
 
 - **延迟执行**：`Promise/A+` 规定，`then` 方法注册的回调函数应该在当前栈清空后才执行，这通常意味着它们将在下一个事件循环的开始被执行。
 - **循环引用检测**：规范要求在处理 `Promise` 链时避免循环引用，即一个 `Promise` 不能解决为其自身。
@@ -240,7 +240,7 @@ class MyPromise {
 	
 			promises.forEach((promise, index) => {
 			    // 以防不是个promise没有then方法
-				Promise.resolve(promise).then(
+				MyPromise.resolve(promise).then(
 					(res) => {
 						results[index] = res;
 						pending--;
@@ -249,6 +249,7 @@ class MyPromise {
 						}
 					},
 					(reason) => {
+						// promise.all 要求 只要有一个失败 整个整体的promise 都是失败的。
 						reject(reason);
 					}
 				);

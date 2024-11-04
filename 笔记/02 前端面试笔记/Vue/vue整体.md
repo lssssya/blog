@@ -1,5 +1,5 @@
 
-##### Controller 和 ViewModel 区别
+### Controller 和 ViewModel 区别
 
 
 **Controller** 是 MVC（Model-View-Controller）架构中的一个核心概念。在 MVC 架构中，Controller 负责接收用户输入（如 HTTP 请求），处理业务逻辑，并决定如何展示数据（即选择合适的 View）。
@@ -18,21 +18,21 @@
 3. **松耦合**：ViewModel 与 View 之间通过数据绑定机制通信，与 Model 之间通过数据模型通信，实现了三者的松耦合。
 
 
-##### 在 Vue2.x 中如何检测数组的变化？
+### 在 Vue2.x 中如何检测数组的变化？
 
 函数劫持，重写了数组的方法，对data的数组进行了原型链重写，调用api的时候会通知依赖。
 
-##### SSR
+### SSR
 
 vue在客户端把标签渲染成html的工作放到了服务端，然后把html直接返回给了客户端。开发的时候服务端渲染只支持 beforeCreate 和 created 两个钩子
 
 
-##### 为什么 data 是个函数
+### 为什么 data 是个函数
 
 因为vue可以被多次复用，创建多个实例，都是同一个构造函数，那么构造函数的引用类型会指向同一个堆，所以要用函数去创造一份。
 
 
-##### complier
+### complier
 
 解析模板，生成渲染模板的render，而render的作用重要为了生成 VNode
 

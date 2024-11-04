@@ -1,12 +1,12 @@
 
-##### prototype 原型
+### prototype 原型
 
 1. 对象都有私有属性 `__proto__`
 2. 函数都有属性 `prototype`
 3. 对象的 `__proto__` 指向该对象的构造函数的 `prototype` ，即 `obj.__proto__ === Obj.prototype`
 > 原型是什么？ 原型是一个对象，通过对象的 `__proto__` 属性可以访问到这个对象，或者对象的构造函数的 `prototype` 属性也可以访问的到，而构造函数的 `prototype` 属性只是刚好叫这个名字，真正的原型是该属性对应的对象。
 
-##### 一个继承的案例
+### 一个继承的案例
 
 ```js
 function A(){}
