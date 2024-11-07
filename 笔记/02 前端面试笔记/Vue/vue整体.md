@@ -39,3 +39,8 @@ vue在客户端把标签渲染成html的工作放到了服务端，然后把html
 - parse：接受 template 原始模板，生成ast
 - optimize：遍历ast，标记静态节点，页面刷新时减少diff对比量，提升性能
 - generate 组成render 字符串，通过 new Function 的方式转换成渲染函数
+
+
+### 组件是怎么渲染成 DOM 的
+
+template - render - 虚拟dom - 真实dom
