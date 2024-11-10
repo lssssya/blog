@@ -52,39 +52,60 @@ const pdfjsLib = require('pdfjs-dist/legacy/build/pdf.js')
 控制并发函数
 
 ```js
-async function asyncPool (poolLimit, array, fn) {  
-  const ret = []  
-  let executing = []  
+async function asyncPool(poolLimit, array) {  
+  let cache = []  
+  let result = []  
   
-  for (const item of array) {  
-    // 把所有 array 的任务封装到一个各自的promise 进行控制，压到微任务里轮到他了就 fn(item) 执行掉。  
-    const p = Promise.resolve().then(() => fn(item))  
-    ret.push(p)  
-    // then 里面会把 executing 里的剔除一个，空出可执行内容  
-    const e = p.then(() => executing.splice(executing.indexOf(e), 1))  
-    executing.push(e)  
+  for (const task of array) {  
+    const p = Promise.resolve()  
+      .then(() => {  
+        return task()  
+      })  
+      .then((value) => {  
+        result.push(value)  
+        cache.splice(cache.indexOf(p), 1)  
+      })  
+    cache.push(p)  
   
-    if (executing.length >= poolLimit) {  
-      await Promise.race(executing)  
+    if (cache.length >= poolLimit) {  
+      await Promise.race(cache)  
     }  
   }  
-  await Promise.all(ret)  
-  return ret  
-}  
-
-// console 测试
+  await Promise.all(cache)  
+  return result  
+}
+  
+// console 测试  
 (async () => {  
-  const tasks = Array.from({ length: 10 }, (_, i) => () =>  
-    new Promise((resolve) => {  
-      const random = Math.random() * 1000 * (i)  
-      console.log(i,random)  
+  const tasks = [  
+    () => new Promise((resolve) => {  
       setTimeout(() => {  
-        console.log(`Task ${ i } completed`)  
-        resolve()  
-      }, random)  
+        console.log(`Task ${1} completed`)  
+        resolve(1)  
+      }, 1000)  
+    }),  
+    () => new Promise((resolve) => {  
+      setTimeout(() => {  
+        console.log(`Task ${2} completed`)  
+        resolve(2)  
+      }, 500)  
+    }),  
+    () => new Promise((resolve) => {  
+      setTimeout(() => {  
+        console.log(`Task ${3} completed`)  
+        resolve(3)  
+      }, 300)  
+    }),  
+    () => new Promise((resolve) => {  
+      setTimeout(() => {  
+        console.log(`Task ${4} completed`)  
+        resolve(4)  
+      }, 400)  
     })  
-  )  
-  const results = await asyncPool(3, tasks, (task) => task())  
+  ]  
+  
+  const results = await asyncPool(2, tasks)  
   console.log('done')  
+  console.log(results)  
 })()
 ```

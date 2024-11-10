@@ -1,4 +1,5 @@
 
+注意！promise的 executor 本身是个同步的立即执行函数，只有resolve 或者 reject 才会丢到异步队列里！
 
 ### 明确的行为定义
 
@@ -372,3 +373,7 @@ new MyPromise((resolve, reject) => {
 })
 
 ```
+
+
+- `Promise.race` 会立即返回 `cache` 数组中第一个完成的 promise 的结果。
+- 其他未完成的 promise 会继续执行，但它们的结果不会影响 `Promise.race` 的返回值。
