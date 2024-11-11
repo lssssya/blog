@@ -229,67 +229,6 @@ class MyPromise {
 
   }
 
-	all(promises) {
-		return new MyPromise((resolve, reject) => {
-			let results = [];
-			let pending = promises.length;
-	
-			if (promises.length === 0) {
-				resolve(results);
-				return;
-			}
-	
-			promises.forEach((promise, index) => {
-			    // 以防不是个promise没有then方法
-				MyPromise.resolve(promise).then(
-					(res) => {
-						results[index] = res;
-						pending--;
-						if (pending === 0) {
-							resolve(results);
-						}
-					},
-					(reason) => {
-						// promise.all 要求 只要有一个失败 整个整体的promise 都是失败的。
-						reject(reason);
-					}
-				);
-			});
-		});
-	},
-	
-	race(promises) {
-	    return new MyPromise((resolve, reject) => {
-	        if (!Array.isArray(promises)) {
-	            throw new TypeError('Argument is not iterable');
-	        }
-	        
-	        let resolved = false;
-	        
-	        for (let i = 0; i < promises.length; i++) {
-	            MyPromise.resolve(promises[i]).then(
-	                value => {
-	                    if (!resolved) {
-	                        resolved = true;
-	                        resolve(value);
-	                    }
-	                },
-	                reason => {
-	                    if (!resolved) {
-	                        resolved = true;
-	                        reject(reason);
-	                    }
-	                }
-	            );
-	        }
-	        
-	        if (promises.length === 0) {
-	            resolve(); // 如果传入的是空数组，则直接解析
-	        }
-	    });
-}
-
-
 }
 
   
@@ -374,6 +313,3 @@ new MyPromise((resolve, reject) => {
 
 ```
 
-
-- `Promise.race` 会立即返回 `cache` 数组中第一个完成的 promise 的结果。
-- 其他未完成的 promise 会继续执行，但它们的结果不会影响 `Promise.race` 的返回值。
