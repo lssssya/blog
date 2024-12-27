@@ -22,6 +22,11 @@
 
 函数劫持，重写了数组的方法，对data的数组进行了原型链重写，调用api的时候会通知依赖。
 
+其中，处理数组时，是对数组的原型进行修改，并且对数组里的成员进行 observe ，而不对数组本身进行 observe。
+
+本身 observe 是对下标进行监听， Object.defineProperty 是可以做到的，但是是性能方面的取舍。对push、pop等操作，都会引起数组下标的变更，而且是大规模变更
+
+
 ### SSR
 
 vue在客户端把标签渲染成html的工作放到了服务端，然后把html直接返回给了客户端。开发的时候服务端渲染只支持 beforeCreate 和 created 两个钩子
@@ -44,3 +49,16 @@ vue在客户端把标签渲染成html的工作放到了服务端，然后把html
 ### 组件是怎么渲染成 DOM 的
 
 template - render - 虚拟dom - 真实dom
+
+
+### vue-router 两个路由方式怎么实现的
+
+浏览器的url变了需要映射到页面的某个组件，url变了需要展示某个组件。/home和Home.vue，/about和About.vue就是一一映射的关系。**前端借鉴路由的称呼来描述url和组件的映射关系**。
+
+- hash: js自带一个`hashchange`事件，它可以自动监听hash值的变更。当我们点击首页的时候，下面的代码都会执行一次，因为hash值变了
+- history 接口允许操作浏览器的曾经在标签页或者框架里访问的会话历史记录，自带的方法`pushState`
+- 
+哈希值改变url不会引起页面的刷新，然后通过`location.hash`得知哈希值；
+history就是有个方法，可以改变url不引起页面刷新的`pushState`，通过`location.pathname`得知url，这个模式下前进回退需要通过`popState`事件来触发。
+
+ 
